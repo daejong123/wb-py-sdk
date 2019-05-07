@@ -96,7 +96,6 @@ class WBSerial(object):
 
         except Exception as e:
             print("串口异常：{}".format(e))
-            self._initProperty()
 
     def _handle_serial_data(self, r_str = ''):
         '''

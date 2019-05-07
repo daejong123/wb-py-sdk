@@ -43,7 +43,7 @@ l1 = Led()
 d1.print(2, 1, 'value:')
 
 # 计数变量
-content = 1
+count = 1
 
 for i in range(10):
     # 获取控制模块开关sw4的值
@@ -54,9 +54,9 @@ for i in range(10):
     l1.set_rgb(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     # 显示模块显示计数值 
-    d1.print(1, 1, content)
+    d1.print(1, 1, count)
     # 将计数变量 递增1
-    content += 1
+    count += 1
 
 ```
 

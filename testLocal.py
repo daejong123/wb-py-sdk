@@ -29,10 +29,10 @@ def whenSw2Pressed(data):
         display1.print(1, 1, isAtOne)
         print('我收到sw在1位置{}'.format(isAtOne))
 
-# content = 1
+# count = 1
 # while True:
-#     display1.print(1, 1, content)
-#     content = content + 1
+#     display1.print(1, 1, count)
+#     content = count + 1
 #     led.set_rgb(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 # 获取类

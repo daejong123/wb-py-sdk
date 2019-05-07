@@ -102,7 +102,7 @@ class Wonderbits(object):
             time_interval = 0.001
             count = loop_forever_time // time_interval
             while count > 0:
-                if Wonderbits._command == break_value or Wonderbits._command == 'error':
+                if Wonderbits._command == break_value:
                     break
                 time.sleep(time_interval)
                 count = count - 1
