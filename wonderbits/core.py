@@ -1,3 +1,5 @@
+from .wbTool import wb_tool
+
 from .Control import Control
 from .Display import Display
 from .Led import Led

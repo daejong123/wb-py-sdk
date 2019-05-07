@@ -1,4 +1,4 @@
-from wonderbits import Display, Control, Led
+from wonderbits import Display, Control, Led, wb_tool
 import time
 import random
 
@@ -8,7 +8,8 @@ c1 = Control()
 l1 = Led()
 
 
-d1.show_console()
+wb_tool.show_console()
+# wb_tool.hide_console()
 
 # 显示模块显示内容
 d1.print(2, 1, 'value:')

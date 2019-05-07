@@ -12,6 +12,8 @@ class WBSerial(object):
 
     # 初始化标志
     _init_flag = False
+    # 是否开启控制台输出串口数据日志
+    _is_show_console = False
 
     def __init__(self):
         if WBSerial._init_flag:
@@ -30,9 +32,6 @@ class WBSerial(object):
         # 设置类命令的回调函数
         self._command_finish = None
         self.command_finish_cb = None
-
-        # 是否开启控制台输出串口数据日志
-        self._is_show_console = False
 
         # 开启一个子线程进行轮询串口
         # 若发现有我们的板子，就会尝试连接下
@@ -105,7 +104,7 @@ class WBSerial(object):
         '''
         if not r_str:
             return
-        if self._is_show_console:
+        if WBSerial._is_show_console:
             print(r_str, end="")
         receive_str = r_str.strip()
         if receive_str.find('Type "help()" for more') != -1:

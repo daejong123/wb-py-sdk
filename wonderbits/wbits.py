@@ -35,18 +35,6 @@ class Wonderbits(object):
             Wonderbits._init_flag = True
         except Exception as e:
             print('wonderbits初始化失败!', e)
-    
-    def show_console(self):
-        '''
-        开启控制台输出
-        '''
-        Wonderbits._wbSerial._is_show_console = True
-
-    def hide_console(self):
-        '''
-        隐藏控制台输出（默认）
-        '''
-        Wonderbits._wbSerial._is_show_console = False
                     
     def _event_data_from_local_py_serial(self, data):
         '''
