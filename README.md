@@ -25,7 +25,6 @@
 ```python
 # 导入需要的模块
 from wonderbits import Display, Control, Led, wb_tool
-import time
 import random
 
 # 初始化模块
