@@ -23,7 +23,7 @@ class Led(Wonderbits):
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = f'led{self.index}.set_rgb({",".join(args)})'
+        command = "led{}.set_rgb({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -48,7 +48,7 @@ class Led(Wonderbits):
             args.append(str(step))
         if block != None:
             args.append(str(block))
-        command = f'led{self.index}.fade_to_rgb({",".join(args)})'
+        command = "led{}.fade_to_rgb({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

@@ -32,7 +32,7 @@ class Hall(Wonderbits):
         args = []
         if block != None:
             args.append(str(block))
-        command = f'hall{self.index}.calibrate({",".join(args)})'
+        command = "hall{}.calibrate({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

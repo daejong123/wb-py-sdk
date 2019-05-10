@@ -16,7 +16,7 @@ NAME = 'wonderbits'
 DESCRIPTION = 'wonderbits by mfeducation.'
 EMAIL = 'daejong2014@163.com'
 AUTHOR = 'dottie'
-REQUIRES_PYTHON = '>=3.6.0'
+REQUIRES_PYTHON = '>=3.0.0'
 VERSION = None
 URL='https://github.com/daejong123/wb-py-sdk.git'
 
@@ -120,11 +120,8 @@ setup(
         # Trove classifiers
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
+        'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy'
     ],
     # $ setup.py publish support.
     cmdclass={

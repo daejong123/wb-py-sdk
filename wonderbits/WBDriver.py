@@ -25,7 +25,7 @@ class Driver(Wonderbits):
             args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = f'driver{self.index}.set_motor_a({",".join(args)})'
+        command = "driver{}.set_motor_a({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -36,7 +36,7 @@ class Driver(Wonderbits):
         """
 
         args = []
-        command = f'driver{self.index}.stop_motor_a({",".join(args)})'
+        command = "driver{}.stop_motor_a({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -55,7 +55,7 @@ class Driver(Wonderbits):
             args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = f'driver{self.index}.set_motor_b({",".join(args)})'
+        command = "driver{}.set_motor_b({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -66,7 +66,7 @@ class Driver(Wonderbits):
         """
 
         args = []
-        command = f'driver{self.index}.stop_motor_b({",".join(args)})'
+        command = "driver{}.stop_motor_b({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -79,7 +79,7 @@ class Driver(Wonderbits):
 
         args = []
         args.append(str(angle))
-        command = f'driver{self.index}.set_servo1({",".join(args)})'
+        command = "driver{}.set_servo1({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -90,7 +90,7 @@ class Driver(Wonderbits):
         """
 
         args = []
-        command = f'driver{self.index}.stop_servo1({",".join(args)})'
+        command = "driver{}.stop_servo1({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -103,7 +103,7 @@ class Driver(Wonderbits):
 
         args = []
         args.append(str(angle))
-        command = f'driver{self.index}.set_servo2({",".join(args)})'
+        command = "driver{}.set_servo2({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -114,7 +114,7 @@ class Driver(Wonderbits):
         """
 
         args = []
-        command = f'driver{self.index}.stop_servo2({",".join(args)})'
+        command = "driver{}.stop_servo2({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

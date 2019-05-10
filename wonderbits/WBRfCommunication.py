@@ -32,7 +32,7 @@ class RfCommunication(Wonderbits):
         """
 
         args = []
-        command = f'rfCommunication{self.index}.clear_msg({",".join(args)})'
+        command = "rfCommunication{}.clear_msg({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -63,7 +63,7 @@ class RfCommunication(Wonderbits):
 
         args = []
         args.append(str(number))
-        command = f'rfCommunication{self.index}.send({",".join(args)})'
+        command = "rfCommunication{}.send({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -79,7 +79,7 @@ class RfCommunication(Wonderbits):
         args = []
         if name != None:
             args.append(str(name))
-        command = f'rfCommunication{self.index}.init({",".join(args)})'
+        command = "rfCommunication{}.init({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

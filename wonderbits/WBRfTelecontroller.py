@@ -29,7 +29,7 @@ class RfTelecontroller(Wonderbits):
         """
 
         args = []
-        command = f'rfTelecontroller{self.index}.clear_msg({",".join(args)})'
+        command = "rfTelecontroller{}.clear_msg({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -60,7 +60,7 @@ class RfTelecontroller(Wonderbits):
 
         args = []
         args.append(str(number))
-        command = f'rfTelecontroller{self.index}.send({",".join(args)})'
+        command = "rfTelecontroller{}.send({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -76,7 +76,7 @@ class RfTelecontroller(Wonderbits):
         args = []
         if name != None:
             args.append(str(name))
-        command = f'rfTelecontroller{self.index}.init({",".join(args)})'
+        command = "rfTelecontroller{}.init({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

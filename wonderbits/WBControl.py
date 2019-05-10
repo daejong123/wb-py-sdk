@@ -113,7 +113,7 @@ class Control(Wonderbits):
 
         args = []
         args.append(str(limit))
-        command = f'control{self.index}.set_m1_m2_sensitivity({",".join(args)})'
+        command = "control{}.set_m1_m2_sensitivity({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

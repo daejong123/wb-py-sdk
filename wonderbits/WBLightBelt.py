@@ -27,7 +27,7 @@ class LightBelt(Wonderbits):
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = f'lightBelt{self.index}.set_leds_rgb({",".join(args)})'
+        command = "lightBelt{}.set_leds_rgb({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -46,7 +46,7 @@ class LightBelt(Wonderbits):
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = f'lightBelt{self.index}.set_single_led_rgb({",".join(args)})'
+        command = "lightBelt{}.set_single_led_rgb({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

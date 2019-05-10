@@ -31,7 +31,7 @@ class Display(Wonderbits):
         args.append(str(text))
         if size != None:
             args.append(str(size))
-        command = f'display{self.index}.print({",".join(args)})'
+        command = "display{}.print({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -55,7 +55,7 @@ class Display(Wonderbits):
             args.append(str(save))
         if color != None:
             args.append(str(color))
-        command = f'display{self.index}.draw_dot({",".join(args)})'
+        command = "display{}.draw_dot({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -83,7 +83,7 @@ class Display(Wonderbits):
             args.append(str(save))
         if color != None:
             args.append(str(color))
-        command = f'display{self.index}.draw_line({",".join(args)})'
+        command = "display{}.draw_line({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -107,7 +107,7 @@ class Display(Wonderbits):
             args.append(str(save))
         if color != None:
             args.append(str(color))
-        command = f'display{self.index}.draw_chart({",".join(args)})'
+        command = "display{}.draw_chart({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -120,7 +120,7 @@ class Display(Wonderbits):
 
         args = []
         args.append(str(page))
-        command = f'display{self.index}.turn_to_page({",".join(args)})'
+        command = "display{}.turn_to_page({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -134,7 +134,7 @@ class Display(Wonderbits):
         args = []
         if page != None:
             args.append(str(page))
-        command = f'display{self.index}.clear_page({",".join(args)})'
+        command = "display{}.clear_page({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -148,7 +148,7 @@ class Display(Wonderbits):
         args = []
         if block != None:
             args.append(str(block))
-        command = f'display{self.index}.clear_all_pages({",".join(args)})'
+        command = "display{}.clear_all_pages({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -168,7 +168,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.disable_page_turning({",".join(args)})'
+        command = "display{}.disable_page_turning({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -179,7 +179,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.enable_page_turning({",".join(args)})'
+        command = "display{}.enable_page_turning({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -190,7 +190,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.set_direction_reverse({",".join(args)})'
+        command = "display{}.set_direction_reverse({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -201,7 +201,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.set_direction_regular({",".join(args)})'
+        command = "display{}.set_direction_regular({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -212,7 +212,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.hide_scrollbar({",".join(args)})'
+        command = "display{}.hide_scrollbar({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -223,7 +223,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.show_scrollbar({",".join(args)})'
+        command = "display{}.show_scrollbar({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -234,7 +234,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.disable_auto_refresh({",".join(args)})'
+        command = "display{}.disable_auto_refresh({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -245,7 +245,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.enable_auto_refresh({",".join(args)})'
+        command = "display{}.enable_auto_refresh({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -256,7 +256,7 @@ class Display(Wonderbits):
         """
 
         args = []
-        command = f'display{self.index}.refresh({",".join(args)})'
+        command = "display{}.refresh({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

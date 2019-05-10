@@ -104,7 +104,7 @@ class Acceleration(Wonderbits):
         args = []
         if block != None:
             args.append(str(block))
-        command = f'acceleration{self.index}.calibrate({",".join(args)})'
+        command = "acceleration{}.calibrate({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     

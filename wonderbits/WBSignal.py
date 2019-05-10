@@ -23,7 +23,7 @@ class Signal(Wonderbits):
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = f'signal{self.index}.set_rgb({",".join(args)})'
+        command = "signal{}.set_rgb({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -36,7 +36,7 @@ class Signal(Wonderbits):
 
         args = []
         args.append(str(frequency))
-        command = f'signal{self.index}.set_buzzer({",".join(args)})'
+        command = "signal{}.set_buzzer({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -49,7 +49,7 @@ class Signal(Wonderbits):
 
         args = []
         args.append(str(strength))
-        command = f'signal{self.index}.set_vibration({",".join(args)})'
+        command = "signal{}.set_vibration({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -67,7 +67,7 @@ class Signal(Wonderbits):
         args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = f'signal{self.index}.play_a_note({",".join(args)})'
+        command = "signal{}.play_a_note({})".format(self.index, ",".join(args))
         self._set_command(command)
 
     
