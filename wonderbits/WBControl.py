@@ -1,6 +1,9 @@
 from .wbits import Wonderbits
 
 
+
+
+
 class Control(Wonderbits):
     def __init__(self, index = 1):
         Wonderbits.__init__(self)
@@ -49,9 +52,7 @@ class Control(Wonderbits):
     
     def is_sw1_pressed(self):
         """
-        该函数用于判断SW1是否被按下
-
-        :rtype: bool
+        该函数用于判断SW1是否被按下:rtype: bool
         """
 
         command = 'control{}.is_sw1_pressed()'.format(self.index)
@@ -60,9 +61,7 @@ class Control(Wonderbits):
     
     def is_sw2_pressed(self):
         """
-        该函数用于判断SW2是否被按下
-
-        :rtype: bool
+        该函数用于判断SW2是否被按下:rtype: bool
         """
 
         command = 'control{}.is_sw2_pressed()'.format(self.index)
@@ -71,9 +70,7 @@ class Control(Wonderbits):
     
     def is_sw3_at_1(self):
         """
-        该函数用于判断SW3的是否在1这侧
-
-        :rtype: bool
+        该函数用于判断SW3的是否在1这侧:rtype: bool
         """
 
         command = 'control{}.is_sw3_at_1()'.format(self.index)
@@ -82,9 +79,7 @@ class Control(Wonderbits):
     
     def get_sw4(self):
         """
-        该函数用于判断获取SW4的位置
-
-        :rtype: int
+        该函数用于判断获取SW4的位置:rtype: int
         """
 
         command = 'control{}.get_sw4()'.format(self.index)
@@ -93,9 +88,7 @@ class Control(Wonderbits):
     
     def is_m1_connected(self):
         """
-        该函数用于判断获取M1与COM是否导通，导通的判断是根据M1与COM之间的电阻率是否低于阈值，低于阈值判断为导通，高于阈值判断为不导通
-
-        :rtype: bool
+        该函数用于判断获取M1与COM是否导通，导通的判断是根据M1与COM之间的电阻率是否低于阈值，低于阈值判断为导通，高于阈值判断为不导通:rtype: bool
         """
 
         command = 'control{}.is_m1_connected()'.format(self.index)
@@ -104,9 +97,7 @@ class Control(Wonderbits):
     
     def is_m2_connected(self):
         """
-        该函数用于判断获取M2与COM是否导通，导通的判断是根据M2与COM之间的电阻率是否低于阈值，低于阈值判断为导通，高于阈值判断为不导通
-
-        :rtype: bool
+        该函数用于判断获取M2与COM是否导通，导通的判断是根据M2与COM之间的电阻率是否低于阈值，低于阈值判断为导通，高于阈值判断为不导通:rtype: bool
         """
 
         command = 'control{}.is_m2_connected()'.format(self.index)
@@ -117,20 +108,18 @@ class Control(Wonderbits):
         """
         设置触摸灵敏度通过设置灵敏度改变M1，M2的触发阈值当get_m1_value或get_m2_value小于阈值时则认为M1或M2与COM导通
 
-        :param limit: 灵敏度：0~100 
+        :param limit: 灵敏度：0~100
         """
 
         args = []
-        args.append(limit)
+        args.append(str(limit))
         command = f'control{self.index}.set_m1_m2_sensitivity({",".join(args)})'
         self._set_command(command)
 
     
     def get_m1_value(self):
         """
-        该函数用于获取M1的电阻率
-
-        :rtype: float
+        该函数用于获取M1的电阻率:rtype: float
         """
 
         command = 'control{}.get_m1_value()'.format(self.index)
@@ -139,11 +128,10 @@ class Control(Wonderbits):
     
     def get_m2_value(self):
         """
-        该函数用于获取M2的电阻率
-
-        :rtype: float
+        该函数用于获取M2的电阻率:rtype: float
         """
 
         command = 'control{}.get_m2_value()'.format(self.index)
         self._get_command(command)
         return self._result
+    

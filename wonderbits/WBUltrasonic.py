@@ -15,9 +15,7 @@ class Ultrasonic(Wonderbits):
     
     def get_distance(self):
         """
-        该函数用于获取超声波检测的距离值，单位：cm
-
-        :rtype: float
+        该函数用于获取超声波检测的距离值，单位：cm:rtype: float
         """
 
         command = 'ultrasonic{}.get_distance()'.format(self.index)

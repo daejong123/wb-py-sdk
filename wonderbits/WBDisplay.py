@@ -17,20 +17,20 @@ class Display(Wonderbits):
         """
         固定位置显示
 
-        :param row: 显示行数：1~16 
-        :param column: 显示列数：1~15 
-        :param text: 显示内容，可以是字符串，整数，小数 
-        :param size: 设置显示的大小，不填写此参数默认为小号字体  SIZE_SMALL为小号字体，值为2 SIZE_BIG为大号字体不支持汉字，值为4 
+        :param row: 显示行数：1~16
+        :param column: 显示列数：1~15
+        :param text: 显示内容，可以是字符串，整数，小数
+        :param size: 设置显示的大小，不填写此参数默认为小号字体  SIZE_SMALL为小号字体，值为2 SIZE_BIG为大号字体不支持汉字，值为4
         """
 
         text = str(text).replace('"', '\\"')
         text = "\"" + text + "\""
         args = []
-        args.append(row)
-        args.append(column)
-        args.append(text)
+        args.append(str(row))
+        args.append(str(column))
+        args.append(str(text))
         if size != None:
-            args.append(size)
+            args.append(str(size))
         command = f'display{self.index}.print({",".join(args)})'
         self._set_command(command)
 
@@ -39,22 +39,22 @@ class Display(Wonderbits):
         """
         画点
 
-        :param x: X轴坐标：1~120 
-        :param y: Y轴坐标：1~32 
-        :param page: 显示页数：1~8  默认画点在第1页 
-        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点 
-        :param color: 设置显示点的颜色  有色点值为1 无色点值为0 
+        :param x: X轴坐标：1~120
+        :param y: Y轴坐标：1~32
+        :param page: 显示页数：1~8  默认画点在第1页
+        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点
+        :param color: 设置显示点的颜色  有色点值为1 无色点值为0
         """
 
         args = []
-        args.append(x)
-        args.append(y)
+        args.append(str(x))
+        args.append(str(y))
         if page != None:
-            args.append(page)
+            args.append(str(page))
         if save != None:
-            args.append(save)
+            args.append(str(save))
         if color != None:
-            args.append(color)
+            args.append(str(color))
         command = f'display{self.index}.draw_dot({",".join(args)})'
         self._set_command(command)
 
@@ -63,26 +63,26 @@ class Display(Wonderbits):
         """
         画线
 
-        :param head_x: 起始点X轴坐标：1~120 
-        :param head_y: 起始点Y轴坐标：1~32 
-        :param tail_x: 终止点X轴坐标：1~120 
-        :param tail_y: 终止点Y轴坐标：1~32 
-        :param page: 显示页数：1~8  默认画线在第1页 
-        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点 
-        :param color: 设置显示点的颜色  有色点值为1 无色点值为0 
+        :param head_x: 起始点X轴坐标：1~120
+        :param head_y: 起始点Y轴坐标：1~32
+        :param tail_x: 终止点X轴坐标：1~120
+        :param tail_y: 终止点Y轴坐标：1~32
+        :param page: 显示页数：1~8  默认画线在第1页
+        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点
+        :param color: 设置显示点的颜色  有色点值为1 无色点值为0
         """
 
         args = []
-        args.append(head_x)
-        args.append(head_y)
-        args.append(tail_x)
-        args.append(tail_y)
+        args.append(str(head_x))
+        args.append(str(head_y))
+        args.append(str(tail_x))
+        args.append(str(tail_y))
         if page != None:
-            args.append(page)
+            args.append(str(page))
         if save != None:
-            args.append(save)
+            args.append(str(save))
         if color != None:
-            args.append(color)
+            args.append(str(color))
         command = f'display{self.index}.draw_line({",".join(args)})'
         self._set_command(command)
 
@@ -91,22 +91,22 @@ class Display(Wonderbits):
         """
         根据点坐标画折线使用此函数会以上一次调用的坐标为起点，本次的坐标为终点划线如果是第一次使用则是在该坐标画一个点
 
-        :param x: X轴坐标：1~120 
-        :param y: Y轴坐标：1~32 
-        :param page: 显示页数：1~8  默认画点在第1页 
-        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点 
-        :param color: 设置显示点的颜色  有色点值为1 无色点值为0 
+        :param x: X轴坐标：1~120
+        :param y: Y轴坐标：1~32
+        :param page: 显示页数：1~8  默认画点在第1页
+        :param save: 设置画点内容是否保存，不填写此参数默认为不保存  DRAW_NORMAL 为不保存画点内容，值为0 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容将不存在 2. 不能与print在同一页显示   DRAW_SAVED 为保存画点内容，值为1 1. 当某页显示画点内容，转到其他页码再转回曾显示画点的页码画点内容仍会存在 2. 可与print在同一页显示，显示位置冲突时以画点内容为主 3. 使用清屏函数可以清除这样的点
+        :param color: 设置显示点的颜色  有色点值为1 无色点值为0
         """
 
         args = []
-        args.append(x)
-        args.append(y)
+        args.append(str(x))
+        args.append(str(y))
         if page != None:
-            args.append(page)
+            args.append(str(page))
         if save != None:
-            args.append(save)
+            args.append(str(save))
         if color != None:
-            args.append(color)
+            args.append(str(color))
         command = f'display{self.index}.draw_chart({",".join(args)})'
         self._set_command(command)
 
@@ -115,11 +115,11 @@ class Display(Wonderbits):
         """
         转到某页
 
-        :param page: 跳转到的页码：1~8 
+        :param page: 跳转到的页码：1~8
         """
 
         args = []
-        args.append(page)
+        args.append(str(page))
         command = f'display{self.index}.turn_to_page({",".join(args)})'
         self._set_command(command)
 
@@ -128,12 +128,12 @@ class Display(Wonderbits):
         """
         清除某页
 
-        :param page: 清除的页码：1~8  默认清除第1页 
+        :param page: 清除的页码：1~8  默认清除第1页
         """
 
         args = []
         if page != None:
-            args.append(page)
+            args.append(str(page))
         command = f'display{self.index}.clear_page({",".join(args)})'
         self._set_command(command)
 
@@ -142,21 +142,19 @@ class Display(Wonderbits):
         """
         清除全部8页屏幕的内容
 
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞 
+        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
         """
 
         args = []
         if block != None:
-            args.append(block)
+            args.append(str(block))
         command = f'display{self.index}.clear_all_pages({",".join(args)})'
         self._set_command(command)
 
     
     def get_button_state(self):
         """
-        该函数用于获取翻页按钮状态
-
-        :rtype: int
+        该函数用于获取翻页按钮状态:rtype: int
         """
 
         command = 'display{}.get_button_state()'.format(self.index)

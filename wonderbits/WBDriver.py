@@ -14,17 +14,17 @@ class Driver(Wonderbits):
         """
         设置电机A转动
 
-        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度 
-        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10 
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞 
+        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度
+        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10
+        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
         """
 
         args = []
-        args.append(speed)
+        args.append(str(speed))
         if time != None:
-            args.append(time)
+            args.append(str(time))
         if block != None:
-            args.append(block)
+            args.append(str(block))
         command = f'driver{self.index}.set_motor_a({",".join(args)})'
         self._set_command(command)
 
@@ -44,17 +44,17 @@ class Driver(Wonderbits):
         """
         设置电机B转动
 
-        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度 
-        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10 
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞 
+        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度
+        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10
+        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
         """
 
         args = []
-        args.append(speed)
+        args.append(str(speed))
         if time != None:
-            args.append(time)
+            args.append(str(time))
         if block != None:
-            args.append(block)
+            args.append(str(block))
         command = f'driver{self.index}.set_motor_b({",".join(args)})'
         self._set_command(command)
 
@@ -74,11 +74,11 @@ class Driver(Wonderbits):
         """
         设置舵机1转动到指定角度使用此函数后舵机1将拥有维持角度的扭矩，施加外力改变舵机1的角度会很困难
 
-        :param angle: 角度：0~180 
+        :param angle: 角度：0~180
         """
 
         args = []
-        args.append(angle)
+        args.append(str(angle))
         command = f'driver{self.index}.set_servo1({",".join(args)})'
         self._set_command(command)
 
@@ -98,11 +98,11 @@ class Driver(Wonderbits):
         """
         设置舵机2转动到指定角度使用此函数后舵机2将拥有维持角度的扭矩，施加外力改变舵机2的角度会很困难
 
-        :param angle: 角度：0~180 
+        :param angle: 角度：0~180
         """
 
         args = []
-        args.append(angle)
+        args.append(str(angle))
         command = f'driver{self.index}.set_servo2({",".join(args)})'
         self._set_command(command)
 

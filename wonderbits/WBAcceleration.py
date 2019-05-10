@@ -33,9 +33,7 @@ class Acceleration(Wonderbits):
     
     def get_x_acceleration(self):
         """
-        该函数用于获取加速度传感器检测的x轴加速度值，单位m/s2
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的x轴加速度值，单位m/s2:rtype: float
         """
 
         command = 'acceleration{}.get_x_acceleration()'.format(self.index)
@@ -44,9 +42,7 @@ class Acceleration(Wonderbits):
     
     def get_y_acceleration(self):
         """
-        该函数用于获取加速度传感器检测的y轴加速度值，单位m/s2
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的y轴加速度值，单位m/s2:rtype: float
         """
 
         command = 'acceleration{}.get_y_acceleration()'.format(self.index)
@@ -55,9 +51,7 @@ class Acceleration(Wonderbits):
     
     def get_z_acceleration(self):
         """
-        该函数用于获取加速度传感器检测的z轴加速度值，单位m/s2
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的z轴加速度值，单位m/s2:rtype: float
         """
 
         command = 'acceleration{}.get_z_acceleration()'.format(self.index)
@@ -66,9 +60,7 @@ class Acceleration(Wonderbits):
     
     def get_acceleration(self):
         """
-        该函数用于获取加速度传感器检测的x、y、z三轴合加速度值，单位m/s2
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的x、y、z三轴合加速度值，单位m/s2:rtype: float
         """
 
         command = 'acceleration{}.get_acceleration()'.format(self.index)
@@ -77,9 +69,7 @@ class Acceleration(Wonderbits):
     
     def get_x_angular_velocity(self):
         """
-        该函数用于获取加速度传感器检测的x轴角速度值，单位°/s
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的x轴角速度值，单位°/s:rtype: float
         """
 
         command = 'acceleration{}.get_x_angular_velocity()'.format(self.index)
@@ -88,9 +78,7 @@ class Acceleration(Wonderbits):
     
     def get_y_angular_velocity(self):
         """
-        该函数用于获取加速度传感器检测的y轴角速度值，单位°/s
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的y轴角速度值，单位°/s:rtype: float
         """
 
         command = 'acceleration{}.get_y_angular_velocity()'.format(self.index)
@@ -99,9 +87,7 @@ class Acceleration(Wonderbits):
     
     def get_z_angular_velocity(self):
         """
-        该函数用于获取加速度传感器检测的z轴角速度值，单位°/s
-
-        :rtype: float
+        该函数用于获取加速度传感器检测的z轴角速度值，单位°/s:rtype: float
         """
 
         command = 'acceleration{}.get_z_angular_velocity()'.format(self.index)
@@ -112,12 +98,12 @@ class Acceleration(Wonderbits):
         """
         校准加速度传感器零点使用该函数时，加速度模块指示灯会在校准执行过程中变为黄色，校准完成后回复原有颜色。校准过程中需要保证加速度模块且保持静止不动，有汉字的一面朝上。
 
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞 
+        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
         """
 
         args = []
         if block != None:
-            args.append(block)
+            args.append(str(block))
         command = f'acceleration{self.index}.calibrate({",".join(args)})'
         self._set_command(command)
 

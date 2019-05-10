@@ -18,9 +18,7 @@ class RfCommunication(Wonderbits):
     
     def get_msg(self):
         """
-        使用该函数可得到最近一次通信收到的内容，如果在程序开始后或使用clear_msg函数后没有发生过通信将返回None
-
-        :rtype: float
+        使用该函数可得到最近一次通信收到的内容，如果在程序开始后或使用clear_msg函数后没有发生过通信将返回None:rtype: float
         """
 
         command = 'rfCommunication{}.get_msg()'.format(self.index)
@@ -40,9 +38,7 @@ class RfCommunication(Wonderbits):
     
     def get_unread_msg_count(self):
         """
-        该函数用于获取通信存储队列中未读内容的个数，最多存储32个未读内容
-
-        :rtype: int
+        该函数用于获取通信存储队列中未读内容的个数，最多存储32个未读内容:rtype: int
         """
 
         command = 'rfCommunication{}.get_unread_msg_count()'.format(self.index)
@@ -51,9 +47,7 @@ class RfCommunication(Wonderbits):
     
     def read(self):
         """
-        该函数用于获取通信存储队列中未读内容，读取后会删除这个数据
-
-        :rtype: float
+        该函数用于获取通信存储队列中未读内容，读取后会删除这个数据:rtype: float
         """
 
         command = 'rfCommunication{}.read()'.format(self.index)
@@ -64,11 +58,11 @@ class RfCommunication(Wonderbits):
         """
         发送数据。调用此函数后，与本模块通信名字相同的模块将会受到发送的内容
 
-        :param number: 发送的数值 
+        :param number: 发送的数值
         """
 
         args = []
-        args.append(number)
+        args.append(str(number))
         command = f'rfCommunication{self.index}.send({",".join(args)})'
         self._set_command(command)
 
@@ -77,23 +71,21 @@ class RfCommunication(Wonderbits):
         """
         设置模块通信名字。只有通信名字相同的模块之间才可以互相通信，不想互相通信的模块需要设置不同的通信名字
 
-        :param name: 通信名字 
+        :param name: 通信名字
         """
 
         name = str(name).replace('"', '\\"')
         name = "\"" + name + "\""
         args = []
         if name != None:
-            args.append(name)
+            args.append(str(name))
         command = f'rfCommunication{self.index}.init({",".join(args)})'
         self._set_command(command)
 
     
     def is_button_pressed(self):
         """
-        该函数用于获取按键是否被按下
-
-        :rtype: bool
+        该函数用于获取按键是否被按下:rtype: bool
         """
 
         command = 'rfCommunication{}.is_button_pressed()'.format(self.index)
