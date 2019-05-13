@@ -22,8 +22,7 @@ class RfCommunication(Wonderbits):
         """
 
         command = 'rfCommunication{}.get_msg()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def clear_msg(self):
         """
@@ -42,8 +41,7 @@ class RfCommunication(Wonderbits):
         """
 
         command = 'rfCommunication{}.get_unread_msg_count()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def read(self):
         """
@@ -51,8 +49,7 @@ class RfCommunication(Wonderbits):
         """
 
         command = 'rfCommunication{}.read()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def send(self, number):
         """
@@ -89,6 +86,5 @@ class RfCommunication(Wonderbits):
         """
 
         command = 'rfCommunication{}.is_button_pressed()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     

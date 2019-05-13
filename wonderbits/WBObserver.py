@@ -28,8 +28,7 @@ class Observer(Wonderbits):
         """
 
         command = 'observer{}.get_temperature()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_humidity(self):
         """
@@ -37,8 +36,7 @@ class Observer(Wonderbits):
         """
 
         command = 'observer{}.get_humidity()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_light(self):
         """
@@ -46,8 +44,7 @@ class Observer(Wonderbits):
         """
 
         command = 'observer{}.get_light()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_volume(self):
         """
@@ -55,6 +52,5 @@ class Observer(Wonderbits):
         """
 
         command = 'observer{}.get_volume()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     

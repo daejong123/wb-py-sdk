@@ -19,8 +19,7 @@ class RfTelecontroller(Wonderbits):
         """
 
         command = 'rfTelecontroller{}.get_msg()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def clear_msg(self):
         """
@@ -39,8 +38,7 @@ class RfTelecontroller(Wonderbits):
         """
 
         command = 'rfTelecontroller{}.get_unread_msg_count()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def read(self):
         """
@@ -48,8 +46,7 @@ class RfTelecontroller(Wonderbits):
         """
 
         command = 'rfTelecontroller{}.read()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def send(self, number):
         """

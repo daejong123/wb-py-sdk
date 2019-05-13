@@ -37,8 +37,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_x_acceleration()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_y_acceleration(self):
         """
@@ -46,8 +45,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_y_acceleration()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_z_acceleration(self):
         """
@@ -55,8 +53,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_z_acceleration()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_acceleration(self):
         """
@@ -64,8 +61,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_acceleration()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_x_angular_velocity(self):
         """
@@ -73,8 +69,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_x_angular_velocity()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_y_angular_velocity(self):
         """
@@ -82,8 +77,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_y_angular_velocity()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_z_angular_velocity(self):
         """
@@ -91,8 +85,7 @@ class Acceleration(Wonderbits):
         """
 
         command = 'acceleration{}.get_z_angular_velocity()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def calibrate(self, block = None):
         """

@@ -92,6 +92,7 @@ class Wonderbits(object):
         self._wbSerial.write_command(command)
         Wonderbits._result = None
         self._set_time_out(3)
+        return Wonderbits._result
 
     def _set_command_time_out(self, loop_forever_time=0.1, break_value = None):
         '''

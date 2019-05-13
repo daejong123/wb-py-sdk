@@ -19,8 +19,7 @@ class Hall(Wonderbits):
         """
 
         command = 'hall{}.get_magnetic()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def calibrate(self, block = None):
         """

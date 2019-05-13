@@ -5,7 +5,7 @@ from .wbits import Wonderbits
 
 
 class Control(Wonderbits):
-    def __init__(self, index = 1):
+    def __init__(self, index=1):
         Wonderbits.__init__(self)
         self.index = index
         self.event = Control._Event(self)
@@ -25,6 +25,7 @@ class Control(Wonderbits):
                 self.this._register_event(
                     'control{}'.format(self.this.index), 'sw2', cb)
             return wrapper
+
     
     def register_sw1(self, cb):
         self._register_event('control{}'.format(self.index), 'sw1', cb)
@@ -56,8 +57,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.is_sw1_pressed()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def is_sw2_pressed(self):
         """
@@ -65,8 +65,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.is_sw2_pressed()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def is_sw3_at_1(self):
         """
@@ -74,8 +73,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.is_sw3_at_1()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_sw4(self):
         """
@@ -83,8 +81,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.get_sw4()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def is_m1_connected(self):
         """
@@ -92,8 +89,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.is_m1_connected()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def is_m2_connected(self):
         """
@@ -101,8 +97,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.is_m2_connected()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def set_m1_m2_sensitivity(self, limit):
         """
@@ -123,8 +118,7 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.get_m1_value()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
     def get_m2_value(self):
         """
@@ -132,6 +126,5 @@ class Control(Wonderbits):
         """
 
         command = 'control{}.get_m2_value()'.format(self.index)
-        self._get_command(command)
-        return self._result
+        return self._get_command(command)
     
