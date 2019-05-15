@@ -24,7 +24,7 @@ for i in range(10):
     # 在显示屏上显示sw4的值
     d1.print(2, 7, sw4)
     # 设置彩灯rbg随机颜色
-    l1.set_rgb(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    # l1.set_rgb(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     # 显示模块显示计数值 
     d1.print(1, 1, count)

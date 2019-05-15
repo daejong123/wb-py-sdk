@@ -69,7 +69,10 @@ class WBSerial(object):
         try:
             while True:
                 oneByte = self._ser.read(1)
-                _buffer += oneByte.decode("gbk")
+                try:
+                    _buffer += oneByte.decode("gbk")
+                except:
+                    continue
                 if oneByte == b"\n":
                     if _buffer.find('Traceback') != -1:
                         self.reporter_data_cb and threading.Thread(target=self._create_return_serial_data_thread, args=('_create_return_serial_data_thread', "-1")).start()
@@ -184,6 +187,7 @@ class WBSerial(object):
                 self._initConnect()
                 if not self._canUseCount:
                     print('无可用串口')
+                    os._exit(0)        
                 else:
                     if self._ser == None and self._canUseCount != 0:
                         self._connect_serial()
