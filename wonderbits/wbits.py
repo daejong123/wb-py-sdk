@@ -85,6 +85,12 @@ class Wonderbits(object):
         Wonderbits._command = None
         self._set_command_time_out(3, command)
 
+    def _set_raw_command(self, raw_command):
+        '''
+        设置类
+        '''
+        self._wbSerial._write_raw_command(raw_command)
+
     def _get_command(self, command):
         '''
         获取类

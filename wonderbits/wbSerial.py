@@ -61,6 +61,18 @@ class WBSerial(object):
             print('exit-wb')
             os._exit(0)
 
+    def _write_raw_command(self, raw_command):
+        '''
+        发送命令给串口
+        '''
+        try:
+            while not self._canSend:
+                time.sleep(.001)
+            self._canSend and self._ser.write(raw_command)
+        except KeyboardInterrupt as e:
+            print('exit-wb')
+            os._exit(0)
+
     def _create_listen_serial_port_data_event_thread(self, name):
         '''
         监听串口数据(轮询)

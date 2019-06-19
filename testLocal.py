@@ -1,5 +1,5 @@
 
-from wonderbits import Display, Led, Control, LightBelt, Signal
+from wonderbits import Display, Led, Control, LightBelt, Signal, wb_tool
 import random
 import time
 

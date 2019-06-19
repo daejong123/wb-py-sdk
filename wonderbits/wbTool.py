@@ -1,9 +1,11 @@
 from .wbSerial import WBSerial
+from .wbUpload import WBUpload
 
-class wb_tool():
+class wb_tool(object):
     '''
     豌豆拼工具集合
     '''
+    upload = WBUpload()
 
     @staticmethod
     def show_console():
