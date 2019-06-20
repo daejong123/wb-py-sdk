@@ -13,3 +13,4 @@ from .WBPulse import Pulse
 from .WBSignal import Signal
 from .WBUltrasonic import Ultrasonic
 from .WBAcceleration import Acceleration
+from .WBBuggy import Buggy

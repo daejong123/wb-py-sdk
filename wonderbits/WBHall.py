@@ -1,8 +1,10 @@
 from .wbits import Wonderbits
 
-
-
-
+def _format_str_type(x):
+    if isinstance(x, str):
+       x = str(x).replace('"', '\\"')
+       x = "\"" + x + "\""
+    return x
 
 class Hall(Wonderbits):
     def __init__(self, index = 1):
@@ -15,7 +17,7 @@ class Hall(Wonderbits):
     
     def get_magnetic(self):
         """
-        该函数用于获取霍尔检测的磁场强度值:rtype: float
+        获取磁场强度值:rtype: float
         """
 
         command = 'hall{}.get_magnetic()'.format(self.index)
@@ -23,9 +25,9 @@ class Hall(Wonderbits):
     
     def calibrate(self, block = None):
         """
-        校准霍尔传感器零点使用该函数时，霍尔模块指示灯会在校准执行过程中变为黄色，校准完成后回复原有颜色。校准过程中保证没有磁性物体靠近模块，否则会导致校准后的零点不准确。
+        校准霍尔传感器注意：校准过程中请确保没有磁性物体靠近模块，否则会导致校准后不准确。校准时，模块指示灯会变为黄色，等待指示灯变蓝说明校准完成了。
 
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
+        :param block: 阻塞参数  False: 不阻塞 True: 阻塞
         """
 
         args = []

@@ -31,7 +31,7 @@
 #     # 将计数变量 递增1
 #     count += 1
 
-from wonderbits import wb_tool
+from wonderbits import wb_tool, Display
 
 # 方式一：通过文件上传
 # wb_tool.upload.upload_with_file_path('/Users/daejong/Desktop/python-sdk/upload.py')
@@ -44,10 +44,10 @@ for i in range(10000):
 '''
 wb_tool.upload.upload_with_file_content(content)
 
-# import time
-# d = Display()
+import time
+d = Display()
 
-# start_time = time.time();
-# for i in range(100):
-#     d.print(1, 1, i)
-# print(time.time() - start_time);
+start_time = time.time();
+for i in range(100):
+    d.print(1, 1, i)
+print(time.time() - start_time);

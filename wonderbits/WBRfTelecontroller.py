@@ -1,8 +1,10 @@
 from .wbits import Wonderbits
 
-
-
-
+def _format_str_type(x):
+    if isinstance(x, str):
+       x = str(x).replace('"', '\\"')
+       x = "\"" + x + "\""
+    return x
 
 class RfTelecontroller(Wonderbits):
     def __init__(self, index = 1):
@@ -68,8 +70,7 @@ class RfTelecontroller(Wonderbits):
         :param name: 通信名字
         """
 
-        name = str(name).replace('"', '\\"')
-        name = "\"" + name + "\""
+        name = _format_str_type(name)
         args = []
         if name != None:
             args.append(str(name))

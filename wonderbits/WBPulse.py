@@ -1,8 +1,10 @@
 from .wbits import Wonderbits
 
-
-
-
+def _format_str_type(x):
+    if isinstance(x, str):
+       x = str(x).replace('"', '\\"')
+       x = "\"" + x + "\""
+    return x
 
 class Pulse(Wonderbits):
     def __init__(self, index = 1):
@@ -18,7 +20,7 @@ class Pulse(Wonderbits):
     
     def get_heart_rate(self):
         """
-        该函数用于获取模块检测的脉搏，此处的脉搏值表示一分钟脉搏跳动的次数测量时要求找到模块有汉字的一面，然后将手指轻轻的贴在此面，需要耐心等待一会则会测量出脉搏:rtype: int
+        获取脉搏（每分钟脉搏跳动次数）测量时，从正面（有字的那面）将手指轻轻的贴在绿灯上，等待10秒左右方可测得准确的脉搏值:rtype: int
         """
 
         command = 'pulse{}.get_heart_rate()'.format(self.index)
@@ -26,7 +28,7 @@ class Pulse(Wonderbits):
     
     def get_unread_wave_count(self):
         """
-        该函数用于获取脉搏波形队列中未读内容的个数，最多存储10个未读内容:rtype: int
+        获取脉搏波形队列中未读内容的个数（最多存储10个未读内容）返回为0时，说明没有未读取的内容:rtype: int
         """
 
         command = 'pulse{}.get_unread_wave_count()'.format(self.index)
@@ -34,7 +36,7 @@ class Pulse(Wonderbits):
     
     def get_heart_wave(self):
         """
-        该函数用于获取脉搏波形队列中的未读波形值，读取后会删除这个数据如果没有未读的数据返回上一次的返回值:rtype: int
+        获取脉搏波形强度值如果没有未读的数据,则返回上一次的值:rtype: int
         """
 
         command = 'pulse{}.get_heart_wave()'.format(self.index)

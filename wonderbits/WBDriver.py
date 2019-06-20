@@ -1,8 +1,10 @@
 from .wbits import Wonderbits
 
-
-
-
+def _format_str_type(x):
+    if isinstance(x, str):
+       x = str(x).replace('"', '\\"')
+       x = "\"" + x + "\""
+    return x
 
 class Driver(Wonderbits):
     def __init__(self, index = 1):
@@ -14,9 +16,9 @@ class Driver(Wonderbits):
         """
         设置电机A转动
 
-        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度
-        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
+        :param speed: 转速：-100~100  符号表示转动方向，绝对值为转动速度
+        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 s  默认值为0.01
+        :param block: 阻塞参数：  False：不阻塞 True：阻塞
         """
 
         args = []
@@ -31,7 +33,7 @@ class Driver(Wonderbits):
     
     def stop_motor_a(self):
         """
-        设置电机A停止转动
+        电机A停止转动
 
         """
 
@@ -44,9 +46,9 @@ class Driver(Wonderbits):
         """
         设置电机B转动
 
-        :param speed: 转速：-100~100  符号不同表示转动方向不同，绝对值为转动速度
-        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 ms  默认值为10
-        :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
+        :param speed: 转速：-100~100  符号表示转动方向，绝对值为转动速度
+        :param time: 变速时间，从当前转速转变到设置转速用到的时间，单位 s  默认值为10
+        :param block: 阻塞参数：  False: 不阻塞 True: 阻塞
         """
 
         args = []
@@ -61,7 +63,7 @@ class Driver(Wonderbits):
     
     def stop_motor_b(self):
         """
-        设置电机B停止转动
+        电机B停止转动
 
         """
 
