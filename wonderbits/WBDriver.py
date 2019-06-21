@@ -21,13 +21,14 @@ class Driver(Wonderbits):
         :param block: 阻塞参数：  False：不阻塞 True：阻塞
         """
 
-        args = []
+        
+        args = []    
         args.append(str(speed))
         if time != None:
             args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = "driver{}.set_motor_a({})".format(self.index, ",".join(args))
+        command = 'driver{}.set_motor_a({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -37,8 +38,7 @@ class Driver(Wonderbits):
 
         """
 
-        args = []
-        command = "driver{}.stop_motor_a({})".format(self.index, ",".join(args))
+        command = 'driver{}.stop_motor_a()'.format(self.index)
         self._set_command(command)
 
     
@@ -51,13 +51,14 @@ class Driver(Wonderbits):
         :param block: 阻塞参数：  False: 不阻塞 True: 阻塞
         """
 
-        args = []
+        
+        args = []    
         args.append(str(speed))
         if time != None:
             args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = "driver{}.set_motor_b({})".format(self.index, ",".join(args))
+        command = 'driver{}.set_motor_b({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -67,8 +68,7 @@ class Driver(Wonderbits):
 
         """
 
-        args = []
-        command = "driver{}.stop_motor_b({})".format(self.index, ",".join(args))
+        command = 'driver{}.stop_motor_b()'.format(self.index)
         self._set_command(command)
 
     
@@ -79,9 +79,10 @@ class Driver(Wonderbits):
         :param angle: 角度：0~180
         """
 
-        args = []
+        
+        args = []    
         args.append(str(angle))
-        command = "driver{}.set_servo1({})".format(self.index, ",".join(args))
+        command = 'driver{}.set_servo1({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -91,8 +92,7 @@ class Driver(Wonderbits):
 
         """
 
-        args = []
-        command = "driver{}.stop_servo1({})".format(self.index, ",".join(args))
+        command = 'driver{}.stop_servo1()'.format(self.index)
         self._set_command(command)
 
     
@@ -103,9 +103,10 @@ class Driver(Wonderbits):
         :param angle: 角度：0~180
         """
 
-        args = []
+        
+        args = []    
         args.append(str(angle))
-        command = "driver{}.set_servo2({})".format(self.index, ",".join(args))
+        command = 'driver{}.set_servo2({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -115,8 +116,7 @@ class Driver(Wonderbits):
 
         """
 
-        args = []
-        command = "driver{}.stop_servo2({})".format(self.index, ",".join(args))
+        command = 'driver{}.stop_servo2()'.format(self.index)
         self._set_command(command)
 
     

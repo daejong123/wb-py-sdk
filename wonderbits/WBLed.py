@@ -21,11 +21,12 @@ class Led(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "led{}.set_rgb({})".format(self.index, ",".join(args))
+        command = 'led{}.set_rgb({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -41,7 +42,8 @@ class Led(Wonderbits):
         :param step: 变化次数：  在渐变时间内经过多少次变化达到目标颜色
         """
 
-        args = []
+        
+        args = []    
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
@@ -50,7 +52,7 @@ class Led(Wonderbits):
             args.append(str(block))
         if step != None:
             args.append(str(step))
-        command = "led{}.fade_to_rgb({})".format(self.index, ",".join(args))
+        command = 'led{}.fade_to_rgb({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

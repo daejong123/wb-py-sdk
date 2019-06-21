@@ -25,6 +25,7 @@ class Pulse(Wonderbits):
 
         command = 'pulse{}.get_heart_rate()'.format(self.index)
         return self._get_command(command)
+
     
     def get_unread_wave_count(self):
         """
@@ -33,6 +34,7 @@ class Pulse(Wonderbits):
 
         command = 'pulse{}.get_unread_wave_count()'.format(self.index)
         return self._get_command(command)
+
     
     def get_heart_wave(self):
         """
@@ -41,4 +43,5 @@ class Pulse(Wonderbits):
 
         command = 'pulse{}.get_heart_wave()'.format(self.index)
         return self._get_command(command)
+
     

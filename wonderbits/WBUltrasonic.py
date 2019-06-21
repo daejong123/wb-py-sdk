@@ -22,4 +22,5 @@ class Ultrasonic(Wonderbits):
 
         command = 'ultrasonic{}.get_distance()'.format(self.index)
         return self._get_command(command)
+
     

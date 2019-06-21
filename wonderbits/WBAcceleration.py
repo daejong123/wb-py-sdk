@@ -40,6 +40,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_x_acceleration()'.format(self.index)
         return self._get_command(command)
+
     
     def get_y_acceleration(self):
         """
@@ -48,6 +49,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_y_acceleration()'.format(self.index)
         return self._get_command(command)
+
     
     def get_z_acceleration(self):
         """
@@ -56,6 +58,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_z_acceleration()'.format(self.index)
         return self._get_command(command)
+
     
     def get_acceleration(self):
         """
@@ -64,6 +67,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_acceleration()'.format(self.index)
         return self._get_command(command)
+
     
     def get_x_angular_velocity(self):
         """
@@ -72,6 +76,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_x_angular_velocity()'.format(self.index)
         return self._get_command(command)
+
     
     def get_y_angular_velocity(self):
         """
@@ -80,6 +85,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_y_angular_velocity()'.format(self.index)
         return self._get_command(command)
+
     
     def get_z_angular_velocity(self):
         """
@@ -88,6 +94,7 @@ class Acceleration(Wonderbits):
 
         command = 'acceleration{}.get_z_angular_velocity()'.format(self.index)
         return self._get_command(command)
+
     
     def calibrate(self, block = None):
         """
@@ -96,10 +103,11 @@ class Acceleration(Wonderbits):
         :param block: 阻塞参数：  False表示不阻塞 True表示阻塞
         """
 
-        args = []
+        
+        args = []    
         if block != None:
             args.append(str(block))
-        command = "acceleration{}.calibrate({})".format(self.index, ",".join(args))
+        command = 'acceleration{}.calibrate({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

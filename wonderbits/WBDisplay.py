@@ -9,6 +9,10 @@ def _format_str_type(x):
 class Display(Wonderbits):
     SIZE_SMALL = 0x02
     SIZE_BIG = 0x04
+    BUTTON_NONE = 0x01
+    BUTTON_L = 0x02
+    BUTTON_R = 0x04
+    BUTTON_M = 0x08
     def __init__(self, index = 1):
         Wonderbits.__init__(self)
         self.index = index
@@ -28,13 +32,14 @@ class Display(Wonderbits):
         """
 
         text = _format_str_type(text)
-        args = []
+        
+        args = []    
         args.append(str(row))
         args.append(str(column))
         args.append(str(text))
         if size != None:
             args.append(str(size))
-        command = "display{}.print({})".format(self.index, ",".join(args))
+        command = 'display{}.print({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -47,12 +52,13 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(x))
         args.append(str(y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_dot({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_dot({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -67,14 +73,15 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(head_x))
         args.append(str(head_y))
         args.append(str(tail_x))
         args.append(str(tail_y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_line({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_line({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -87,12 +94,13 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认画点在第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(x))
         args.append(str(y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_chart({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_chart({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -103,9 +111,10 @@ class Display(Wonderbits):
         :param page: 页码：1~8
         """
 
-        args = []
+        
+        args = []    
         args.append(str(page))
-        command = "display{}.turn_to_page({})".format(self.index, ",".join(args))
+        command = 'display{}.turn_to_page({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -116,10 +125,11 @@ class Display(Wonderbits):
         :param page: 清除的页码：1~8  默认第1页
         """
 
-        args = []
+        
+        args = []    
         if page != None:
             args.append(str(page))
-        command = "display{}.clear_page({})".format(self.index, ",".join(args))
+        command = 'display{}.clear_page({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -130,10 +140,11 @@ class Display(Wonderbits):
         :param block: 阻塞参数：  False: 不阻塞 True: 阻塞
         """
 
-        args = []
+        
+        args = []    
         if block != None:
             args.append(str(block))
-        command = "display{}.clear_all_pages({})".format(self.index, ",".join(args))
+        command = 'display{}.clear_all_pages({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -143,8 +154,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.disable_page_turning({})".format(self.index, ",".join(args))
+        command = 'display{}.disable_page_turning()'.format(self.index)
         self._set_command(command)
 
     
@@ -154,8 +164,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.enable_page_turning({})".format(self.index, ",".join(args))
+        command = 'display{}.enable_page_turning()'.format(self.index)
         self._set_command(command)
 
     
@@ -166,6 +175,7 @@ class Display(Wonderbits):
 
         command = 'display{}.get_button_state()'.format(self.index)
         return self._get_command(command)
+
     
     def set_direction_reverse(self):
         """
@@ -173,8 +183,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.set_direction_reverse({})".format(self.index, ",".join(args))
+        command = 'display{}.set_direction_reverse()'.format(self.index)
         self._set_command(command)
 
     
@@ -184,8 +193,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.set_direction_regular({})".format(self.index, ",".join(args))
+        command = 'display{}.set_direction_regular()'.format(self.index)
         self._set_command(command)
 
     
@@ -195,8 +203,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.hide_scrollbar({})".format(self.index, ",".join(args))
+        command = 'display{}.hide_scrollbar()'.format(self.index)
         self._set_command(command)
 
     
@@ -206,8 +213,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.show_scrollbar({})".format(self.index, ",".join(args))
+        command = 'display{}.show_scrollbar()'.format(self.index)
         self._set_command(command)
 
     
@@ -217,8 +223,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.disable_auto_refresh({})".format(self.index, ",".join(args))
+        command = 'display{}.disable_auto_refresh()'.format(self.index)
         self._set_command(command)
 
     
@@ -228,8 +233,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.enable_auto_refresh({})".format(self.index, ",".join(args))
+        command = 'display{}.enable_auto_refresh()'.format(self.index)
         self._set_command(command)
 
     
@@ -239,8 +243,7 @@ class Display(Wonderbits):
 
         """
 
-        args = []
-        command = "display{}.refresh({})".format(self.index, ",".join(args))
+        command = 'display{}.refresh()'.format(self.index)
         self._set_command(command)
 
     
@@ -253,12 +256,13 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(x))
         args.append(str(y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_save_dot({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_save_dot({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -273,14 +277,15 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(head_x))
         args.append(str(head_y))
         args.append(str(tail_x))
         args.append(str(tail_y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_save_line({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_save_line({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -293,12 +298,13 @@ class Display(Wonderbits):
         :param page: 显示页数：1~8  默认画点在第1页
         """
 
-        args = []
+        
+        args = []    
         args.append(str(x))
         args.append(str(y))
         if page != None:
             args.append(str(page))
-        command = "display{}.draw_save_chart({})".format(self.index, ",".join(args))
+        command = 'display{}.draw_save_chart({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

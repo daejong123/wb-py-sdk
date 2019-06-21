@@ -43,6 +43,7 @@ class Control(Wonderbits):
 
         command = 'control{}.is_sw1_pressed()'.format(self.index)
         return self._get_command(command)
+
     
     def is_sw2_pressed(self):
         """
@@ -51,6 +52,7 @@ class Control(Wonderbits):
 
         command = 'control{}.is_sw2_pressed()'.format(self.index)
         return self._get_command(command)
+
     
     def is_sw3_at_1(self):
         """
@@ -59,6 +61,7 @@ class Control(Wonderbits):
 
         command = 'control{}.is_sw3_at_1()'.format(self.index)
         return self._get_command(command)
+
     
     def get_sw4(self):
         """
@@ -67,6 +70,7 @@ class Control(Wonderbits):
 
         command = 'control{}.get_sw4()'.format(self.index)
         return self._get_command(command)
+
     
     def is_m1_connected(self):
         """
@@ -75,6 +79,7 @@ class Control(Wonderbits):
 
         command = 'control{}.is_m1_connected()'.format(self.index)
         return self._get_command(command)
+
     
     def is_m2_connected(self):
         """
@@ -83,6 +88,7 @@ class Control(Wonderbits):
 
         command = 'control{}.is_m2_connected()'.format(self.index)
         return self._get_command(command)
+
     
     def set_m1_m2_sensitivity(self, limit):
         """
@@ -91,9 +97,10 @@ class Control(Wonderbits):
         :param limit: 灵敏度：0~100
         """
 
-        args = []
+        
+        args = []    
         args.append(str(limit))
-        command = "control{}.set_m1_m2_sensitivity({})".format(self.index, ",".join(args))
+        command = 'control{}.set_m1_m2_sensitivity({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -104,6 +111,7 @@ class Control(Wonderbits):
 
         command = 'control{}.get_m1_value()'.format(self.index)
         return self._get_command(command)
+
     
     def get_m2_value(self):
         """
@@ -112,4 +120,5 @@ class Control(Wonderbits):
 
         command = 'control{}.get_m2_value()'.format(self.index)
         return self._get_command(command)
+
     

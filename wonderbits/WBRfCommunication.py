@@ -25,6 +25,7 @@ class RfCommunication(Wonderbits):
 
         command = 'rfCommunication{}.get_msg()'.format(self.index)
         return self._get_command(command)
+
     
     def clear_msg(self):
         """
@@ -32,8 +33,7 @@ class RfCommunication(Wonderbits):
 
         """
 
-        args = []
-        command = "rfCommunication{}.clear_msg({})".format(self.index, ",".join(args))
+        command = 'rfCommunication{}.clear_msg()'.format(self.index)
         self._set_command(command)
 
     
@@ -44,6 +44,7 @@ class RfCommunication(Wonderbits):
 
         command = 'rfCommunication{}.get_unread_msg_count()'.format(self.index)
         return self._get_command(command)
+
     
     def read(self):
         """
@@ -52,6 +53,7 @@ class RfCommunication(Wonderbits):
 
         command = 'rfCommunication{}.read()'.format(self.index)
         return self._get_command(command)
+
     
     def send(self, number):
         """
@@ -60,9 +62,10 @@ class RfCommunication(Wonderbits):
         :param number: 发送的数值
         """
 
-        args = []
+        
+        args = []    
         args.append(str(number))
-        command = "rfCommunication{}.send({})".format(self.index, ",".join(args))
+        command = 'rfCommunication{}.send({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -74,10 +77,11 @@ class RfCommunication(Wonderbits):
         """
 
         name = _format_str_type(name)
-        args = []
+        
+        args = []    
         if name != None:
             args.append(str(name))
-        command = "rfCommunication{}.init({})".format(self.index, ",".join(args))
+        command = 'rfCommunication{}.init({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -88,4 +92,5 @@ class RfCommunication(Wonderbits):
 
         command = 'rfCommunication{}.is_button_pressed()'.format(self.index)
         return self._get_command(command)
+
     

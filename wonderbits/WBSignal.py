@@ -21,11 +21,12 @@ class Signal(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "signal{}.set_rgb({})".format(self.index, ",".join(args))
+        command = 'signal{}.set_rgb({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -36,9 +37,10 @@ class Signal(Wonderbits):
         :param frequency: 频率：0~20000 Hz
         """
 
-        args = []
+        
+        args = []    
         args.append(str(frequency))
-        command = "signal{}.set_buzzer({})".format(self.index, ",".join(args))
+        command = 'signal{}.set_buzzer({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -49,9 +51,10 @@ class Signal(Wonderbits):
         :param strength: 振动幅度：0~100
         """
 
-        args = []
+        
+        args = []    
         args.append(str(strength))
-        command = "signal{}.set_vibration({})".format(self.index, ",".join(args))
+        command = 'signal{}.set_vibration({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -64,12 +67,13 @@ class Signal(Wonderbits):
         :param block: 阻塞参数：  False: 不阻塞 True: 阻塞
         """
 
-        args = []
+        
+        args = []    
         args.append(str(frequency))
         args.append(str(time))
         if block != None:
             args.append(str(block))
-        command = "signal{}.play_a_note({})".format(self.index, ",".join(args))
+        command = 'signal{}.play_a_note({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

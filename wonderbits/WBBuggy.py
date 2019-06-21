@@ -31,6 +31,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_battery_value()'.format(self.index)
         return self._get_command(command)
+
     
     def set_buzzer(self, frequency):
         """
@@ -39,9 +40,10 @@ class Buggy(Wonderbits):
         :param frequency: 频率：0~20000 Hz
         """
 
-        args = []
+        
+        args = []    
         args.append(str(frequency))
-        command = "buggy{}.set_buzzer({})".format(self.index, ",".join(args))
+        command = 'buggy{}.set_buzzer({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -54,11 +56,12 @@ class Buggy(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "buggy{}.set_led1({})".format(self.index, ",".join(args))
+        command = 'buggy{}.set_led1({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -71,11 +74,12 @@ class Buggy(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "buggy{}.set_led2({})".format(self.index, ",".join(args))
+        command = 'buggy{}.set_led2({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -87,10 +91,11 @@ class Buggy(Wonderbits):
         :param speed_right: 转速：-100~100  符号表示转动方向，绝对值为转动速度
         """
 
-        args = []
+        
+        args = []    
         args.append(str(speed_left))
         args.append(str(speed_right))
-        command = "buggy{}.set_motor({})".format(self.index, ",".join(args))
+        command = 'buggy{}.set_motor({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -101,6 +106,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_s1()'.format(self.index)
         return self._get_command(command)
+
     
     def get_s2(self):
         """
@@ -109,6 +115,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_s2()'.format(self.index)
         return self._get_command(command)
+
     
     def get_tracer_all_black_state(self):
         """
@@ -117,6 +124,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_tracer_all_black_state()'.format(self.index)
         return self._get_command(command)
+
     
     def get_tracer_all_white_state(self):
         """
@@ -125,22 +133,31 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_tracer_all_white_state()'.format(self.index)
         return self._get_command(command)
+
     
     def get_tracer_state(self, channel):
         """
         判断某个循迹传感器是否检测为黑:rtype: bool
         """
 
-        command = 'buggy{}.get_tracer_state()'.format(self.index)
+        
+        args = []    
+        args.append(str(channel))
+        command = 'buggy{}.get_tracer_state({})'.format(self.index, ",".join(args))
         return self._get_command(command)
+
     
     def get_tracer_value(self, channel):
         """
         获取某个循迹传感器的检测值:rtype: float
         """
 
-        command = 'buggy{}.get_tracer_value()'.format(self.index)
+        
+        args = []    
+        args.append(str(channel))
+        command = 'buggy{}.get_tracer_value({})'.format(self.index, ",".join(args))
         return self._get_command(command)
+
     
     def get_t6(self):
         """
@@ -149,6 +166,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_t6()'.format(self.index)
         return self._get_command(command)
+
     
     def get_t7(self):
         """
@@ -157,6 +175,7 @@ class Buggy(Wonderbits):
 
         command = 'buggy{}.get_t7()'.format(self.index)
         return self._get_command(command)
+
     
     def set_calibration_percentage(self, value):
         """
@@ -165,9 +184,10 @@ class Buggy(Wonderbits):
         :param value: 值：0~100
         """
 
-        args = []
+        
+        args = []    
         args.append(str(value))
-        command = "buggy{}.set_calibration_percentage({})".format(self.index, ",".join(args))
+        command = 'buggy{}.set_calibration_percentage({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -177,8 +197,7 @@ class Buggy(Wonderbits):
 
         """
 
-        args = []
-        command = "buggy{}.calibration_black({})".format(self.index, ",".join(args))
+        command = 'buggy{}.calibration_black()'.format(self.index)
         self._set_command(command)
 
     
@@ -188,8 +207,7 @@ class Buggy(Wonderbits):
 
         """
 
-        args = []
-        command = "buggy{}.calibration_white({})".format(self.index, ",".join(args))
+        command = 'buggy{}.calibration_white()'.format(self.index)
         self._set_command(command)
 
     

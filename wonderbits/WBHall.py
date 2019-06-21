@@ -22,6 +22,7 @@ class Hall(Wonderbits):
 
         command = 'hall{}.get_magnetic()'.format(self.index)
         return self._get_command(command)
+
     
     def calibrate(self, block = None):
         """
@@ -30,10 +31,10 @@ class Hall(Wonderbits):
         :param block: 阻塞参数  False: 不阻塞 True: 阻塞
         """
 
-        args = []
+        args = []    
         if block != None:
             args.append(str(block))
-        command = "hall{}.calibrate({})".format(self.index, ",".join(args))
+        command = 'hall{}.calibrate({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

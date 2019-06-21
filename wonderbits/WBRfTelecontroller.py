@@ -22,6 +22,7 @@ class RfTelecontroller(Wonderbits):
 
         command = 'rfTelecontroller{}.get_msg()'.format(self.index)
         return self._get_command(command)
+
     
     def clear_msg(self):
         """
@@ -29,8 +30,7 @@ class RfTelecontroller(Wonderbits):
 
         """
 
-        args = []
-        command = "rfTelecontroller{}.clear_msg({})".format(self.index, ",".join(args))
+        command = 'rfTelecontroller{}.clear_msg()'.format(self.index)
         self._set_command(command)
 
     
@@ -41,6 +41,7 @@ class RfTelecontroller(Wonderbits):
 
         command = 'rfTelecontroller{}.get_unread_msg_count()'.format(self.index)
         return self._get_command(command)
+
     
     def read(self):
         """
@@ -49,6 +50,7 @@ class RfTelecontroller(Wonderbits):
 
         command = 'rfTelecontroller{}.read()'.format(self.index)
         return self._get_command(command)
+
     
     def send(self, number):
         """
@@ -57,9 +59,10 @@ class RfTelecontroller(Wonderbits):
         :param number: 发送的数值
         """
 
-        args = []
+        
+        args = []    
         args.append(str(number))
-        command = "rfTelecontroller{}.send({})".format(self.index, ",".join(args))
+        command = 'rfTelecontroller{}.send({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -71,10 +74,11 @@ class RfTelecontroller(Wonderbits):
         """
 
         name = _format_str_type(name)
-        args = []
+        
+        args = []    
         if name != None:
             args.append(str(name))
-        command = "rfTelecontroller{}.init({})".format(self.index, ",".join(args))
+        command = 'rfTelecontroller{}.init({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     

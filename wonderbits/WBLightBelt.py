@@ -23,13 +23,14 @@ class LightBelt(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(start))
         args.append(str(end))
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "lightBelt{}.set_leds_rgb({})".format(self.index, ",".join(args))
+        command = 'lightBelt{}.set_leds_rgb({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
@@ -43,12 +44,13 @@ class LightBelt(Wonderbits):
         :param b: 蓝色：0~255
         """
 
-        args = []
+        
+        args = []    
         args.append(str(num))
         args.append(str(r))
         args.append(str(g))
         args.append(str(b))
-        command = "lightBelt{}.set_single_led_rgb({})".format(self.index, ",".join(args))
+        command = 'lightBelt{}.set_single_led_rgb({})'.format(self.index, ",".join(args))
         self._set_command(command)
 
     
